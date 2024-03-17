@@ -15,3 +15,14 @@ interface Directors extends Teacher {
 interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
+
+//task 3
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+// solution for task 3
+interface IStudentClassProps {
+  firstName: string;
+  lastName: string;
+}

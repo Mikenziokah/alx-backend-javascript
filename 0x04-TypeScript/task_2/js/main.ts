@@ -30,4 +30,8 @@ function executeWork(employee: Director | Teacher): string {
     ? (employee as Director).workDirectorTasks()
     : (employee as Teacher).workTeacherTasks();
 }
+type Subjects = "Math" | "History";
 
+function teachClass(todayClass:Subjects): string {
+    return `Teaching ${todayClass}`;
+}

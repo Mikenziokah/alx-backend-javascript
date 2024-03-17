@@ -21,3 +21,13 @@ class Teacher implements TeacherInterface {
 function createEmployee(salary: number | string): Teacher | Director {
   return isNaN(Number(salary)) && salary > 500 ? new Director() : new Teacher();
 }
+function isDirector(employee: Director | Teacher): employee is Director {
+  return (employee as Director).workDirectorTasks !== undefined;
+}
+
+function executeWork(employee: Director | Teacher): string {
+  return isDirector(employee)
+    ? (employee as Director).workDirectorTasks()
+    : (employee as Teacher).workTeacherTasks();
+}
+
